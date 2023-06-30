@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import dlib
 import matplotlib.pyplot as plt
+import simpleaudio as sa
 
 cap = cv2.VideoCapture(0)
 
@@ -11,6 +12,17 @@ predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 # Change according to the patient
 patient_blink_threshold = 4
 patient_drowsiness_threshold = 1.7
+
+# asleep conditions
+asleep_duration = 0
+is_asleep = False
+
+# Variable to track alarm sound playing status
+is_alarm_playing = False
+
+buzzer_sound = sa.WaveObject.from_wave_file("warning.wav")
+
+
 
 def midPoint(p1,p2):
     return (int((p1.x +p2.x)*0.5), int((p1.y +p2.y)*0.5))
@@ -155,15 +167,35 @@ while True:
 
         # encoding to 0-1
         if eye_open_ratio > patient_blink_threshold:
-            cv2.putText(gray, "BLINKING", (50, 50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0))
+            cv2.putText(gray, "BLINKING", (30, 50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0))
             eye_open_ratio = 1
+            asleep_duration += 1
+            if asleep_duration >= 5 * 15:  # Assuming the frame rate is 30 fps
+                is_asleep = True
+
         else:
             eye_open_ratio = 0
+            asleep_duration = 0
+            is_asleep = False
 
         # 
         if drowsiness_ratio < patient_drowsiness_threshold:
-            cv2.putText(gray, "DROWSY", (50, 70), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0))
+            cv2.putText(gray, "DROWSY", (30, 70), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0))
+
+        if is_asleep:
+            cv2.putText(gray, "Driver Asleep !", (30, 90), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0), 2)
+
+        if is_asleep and not is_alarm_playing:
+            buzzer_sound.play()
+            is_alarm_playing = True
+
+        elif not is_asleep and is_alarm_playing:
+            is_alarm_playing = False
             
+        
+
+
+                       
 
         # Append current time and eye_open_ratio to the lists
         time_values.append(len(time_values) + 1)
