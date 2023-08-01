@@ -7,10 +7,9 @@ Link to the file: https://drive.google.com/file/d/1HFpq7n17R1W73vxMtAIWOL2xDGQpK
 2) Run the run.py file. You may need to modify the patient thresholds.
 
 # Results
-</p>
-<img src="https://github.com/raj-anadkat/Driver_Monitoring_System/assets/109377585/c7cc0fa7-cbf9-4bdc-b95f-dbd34d57933c" width="300"/>
-<img src="https://github.com/raj-anadkat/Driver_Monitoring_System/assets/109377585/88d36319-1109-498c-808f-4a482e5c4be7" alt="half_lane" width="300"/>
-</p>
+<img src="https://github.com/raj-anadkat/Driver_Monitoring_System/assets/109377585/c7cc0fa7-cbf9-4bdc-b95f-dbd34d57933c" width="500"/>
+<img src="https://github.com/raj-anadkat/Driver_Monitoring_System/assets/109377585/88d36319-1109-498c-808f-4a482e5c4be7" width="500"/>
+
 
 ## Simulation
 https://github.com/raj-anadkat/Driver_Monitoring_System/assets/109377585/289df16f-ebee-4da4-ad91-4d6f785f7e2c
