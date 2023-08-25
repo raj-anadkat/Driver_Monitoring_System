@@ -135,10 +135,10 @@ def get_head_pose(frame,landmarks):
     cv2.circle(frame,p4,3,(0,0,255),-1)
 
     if p1[0] - p4[0] > 150:
-        head_status = "Looking Left"
+        head_status = "Looking Right"
         
     if p1[0] - p4[0] < -150:
-        head_status = "Looking Right"
+        head_status = "Looking Left"
         
     if p1[1] - p4[1] > 80:
         head_status = "Looking Up"
