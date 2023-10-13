@@ -36,7 +36,9 @@ With the help of Carla Scenario Runner, we can create custom scenarios  to monit
 # Installation Steps
 1) Download the facial landmarks .dat file and add it in the same directory:
 Link to the file: https://drive.google.com/file/d/1HFpq7n17R1W73vxMtAIWOL2xDGQpKe5C/view?usp=sharing
-2) Run the run.py file. You may need to modify the patient thresholds.
+2) Launch the Carla UE4 Simulator v0.9.13
+3) Run the vision_node.py script in a terminal.
+4) Run the keyboard_main.py script in different terminal for keyboard control or steering_main.py for logitech g290 control
 
 # Results
 <![giphy](https://github.com/raj-anadkat/Driver_Monitoring_System/assets/109377585/4dd7b747-d5a8-4117-924e-3eb312d1a053)/>
