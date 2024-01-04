@@ -3,6 +3,8 @@ Guardian Angel - The goal is to have continuous cognitive capability assessment 
 So continually monitor the driving skill, attention and vital signs of the patient while they are driving by putting sensors in the driving simulator rig.
 The outcome will let the physician know when and how often the patient had “Cognitive Impairment Events” which can serve as indicators for cognitive decline.
 
+Learn more at : [Medium Article](https://medium.com/adventures-in-autonomous-vehicles/guardian-angel-shared-autonomy-safety-system-for-drivers-with-compromised-cognitive-3826c822c0b)
+
 # Vision Stack:
 
 Features: 
